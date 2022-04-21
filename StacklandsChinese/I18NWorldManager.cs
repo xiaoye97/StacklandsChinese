@@ -58,6 +58,14 @@ namespace StacklandsChinese
             foreach (var prefab in __instance.BlueprintPrefabs)
             {
                 prefab.StackPostText = StacklandsChinese.GetI18N($"BlueprintStackPostText_{prefab.Id}", prefab.StackPostText);
+				if (prefab.Subprints != null && prefab.Subprints.Count > 0)
+                {
+					for (int i = 0; i < prefab.Subprints.Count; i++)
+                    {
+						var sub = prefab.Subprints[i];
+						sub.StatusName = StacklandsChinese.GetI18N($"Blueprint_{prefab.Id}_Subprint_{i}_StatusName", sub.StatusName);
+					}
+                }
             }
             foreach (var prefab in __instance.BoosterPackPrefabs)
             {

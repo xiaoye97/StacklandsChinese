@@ -6,6 +6,13 @@ namespace StacklandsChinese
 {
     public static class I18NMisc
     {
+        //[HarmonyPrefix, HarmonyPatch(typeof(GameCard), "StartTimer")]
+        //public static bool GameCardStartTimerPatch(GameCard __instance, string status, string actionId)
+        //{
+        //    Debug.Log($"开始timer {actionId} {status}");
+        //    return true;
+        //}
+
         [HarmonyPrefix, HarmonyPatch(typeof(CardData), "FullName", MethodType.Getter)]
         public static bool CardDataFullNamePatch(CardData __instance, ref string __result)
         {
