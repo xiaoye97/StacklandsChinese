@@ -12,7 +12,7 @@ using System.Collections.Generic;
 
 namespace StacklandsChinese
 {
-    [BepInPlugin("me.xiaoye97.plugin.Stacklands.StacklandsChinese", "Stacklands汉化模组", "1.0.0")]
+    [BepInPlugin("me.xiaoye97.plugin.Stacklands.StacklandsChinese", "Stacklands汉化模组", "1.1.0")]
     public class StacklandsChinese : BaseUnityPlugin
     {
         public static TMP_FontAsset TMPTranslateFont;

@@ -141,5 +141,19 @@ namespace StacklandsChinese
             instructions = StacklandsChinese.ReplaceIL(instructions, "The Portal is Shaking", "入口在晃动");
             return instructions;
         }
+
+        [HarmonyTranspiler, HarmonyPatch(typeof(Chest), "Update")]
+        public static IEnumerable<CodeInstruction> ChestUpdatePatch(IEnumerable<CodeInstruction> instructions)
+        {
+            instructions = StacklandsChinese.ReplaceIL(instructions, "A chest with Coins in it. Click to remove Coins. Contains {0}/{1}{2}", "用来存储金币的箱子。点击取出金币。包含{0}/{1}{2}");
+            return instructions;
+        }
+
+        [HarmonyTranspiler, HarmonyPatch(typeof(Market), "Update")]
+        public static IEnumerable<CodeInstruction> MarketUpdatePatch(IEnumerable<CodeInstruction> instructions)
+        {
+            instructions = StacklandsChinese.ReplaceIL(instructions, "Selling ", "出售 ");
+            return instructions;
+        }
     }
 }
